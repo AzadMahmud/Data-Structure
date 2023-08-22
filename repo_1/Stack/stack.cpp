@@ -100,6 +100,12 @@ string InfixToPostfix(string exp, mystack st){
         if(exp[i]==' '|| exp[i]==',') continue;
         else if((c>='a'&&c<='z')||(c>='A'&&c<='Z')||(c>='0'&&c<='9')){
             result+=c;
+            int j =i+1;
+            while(isdigit(exp[j])){
+                result+=exp[j];
+                j++;
+            }
+            i =j-1;
             result+=","; 
         }
         else if(c=='('){
